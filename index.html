@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <title>KXFLIX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       ÉCRAN DE CONNEXION
+  ========================== -->
+  <div id="login-screen">
+
+    <div class="login-background"></div>
+
+    <div class="login-box">
+      <div class="login-logo">KX<span>FLIX</span></div>
+
+      <!-- Étape prénom -->
+      <div id="name-step" class="login-step active">
+        <h1>Bienvenue</h1>
+        <p>Comment tu t'appelles ?</p>
+
+        <input
+          type="text"
+          id="name-input"
+          placeholder="Ton prénom"
+          maxlength="20"
+          autocomplete="off"
+        >
+
+        <button id="name-button">CONTINUER</button>
+      </div>
+
+      <!-- Étape mot de passe -->
+      <div id="password-step" class="login-step">
+        <h1>Encore une étape</h1>
+        <p>Entre le mot de passe pour accéder à KXFLIX.</p>
+
+        <input
+          type="password"
+          id="password-input"
+          placeholder="Mot de passe"
+          autocomplete="off"
+        >
+
+        <div id="password-error">Mot de passe incorrect</div>
+
+        <button id="password-button">ENTRER</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================
+       SITE
+  ========================== -->
+  <div id="site">
+
+    <!-- HEADER -->
+    <header class="topbar">
+
+      <div class="logo">
+        KX<span>FLIX</span>
+      </div>
+
+      <div class="topbar-right">
+
+        <!-- Recherche -->
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Rechercher..."
+            autocomplete="off"
+          >
+          <button id="clear-search" aria-label="Effacer">×</button>
+        </div>
+
+        <!-- Résultats recherche -->
+        <div id="search-status"></div>
+
+        <!-- Profil -->
+        <div class="profile">
+
+          <img
+            src="https://i.pinimg.com/474x/5b/50/e7/5b50e75d07c726d36f397f6359098f58.jpg"
+            alt="Profil"
+          >
+
+          <span id="user-name"></span>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         FILM À LA UNE
+    ========================== -->
+    <section class="featured">
+
+      <div
+        class="featured-background"
+        style="background-image: url('https://snworksceo.imgix.net/ttd/86058c86-ffe3-45ff-bd60-f6f8d28dbdd1.sized-1000x1000.jpg?w=800&dpr=2&ar=16%3A9&fit=crop&crop=faces');"
+      ></div>
+
+      <div class="featured-overlay"></div>
+
+      <div class="featured-content">
+
+        <div class="featured-label">
+          À LA UNE
+        </div>
+
+        <h1>SPIDER-MAN : NEW GENERATION</h1>
+
+        <div class="featured-meta">
+          <span>2018</span>
+          <span>10+</span>
+          <span>Animation</span>
+        </div>
+
+        <p>
+          Miles Morales devient Spider-Man et découvre qu'il n'est pas
+          le seul héros à porter ce masque. Plusieurs dimensions vont
+          alors se retrouver liées.
+        </p>
+
+        <div class="featured-actions">
+
+          <button id="featured-button" class="watch-button">
+            <span>▶</span>
+            REGARDER
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="featured-fade"></div>
+
+    </section>
+
+
+    <!-- =========================
+         FILMS
+    ========================== -->
+    <main class="films-section">
+
+      <div class="section-header">
+
+        <h2 id="section-title">
+          Films populaires
+        </h2>
+
+        <div class="carousel-controls">
+
+          <button id="prev-btn" aria-label="Films précédents">
+            ‹
+          </button>
+
+          <button id="next-btn" aria-label="Films suivants">
+            ›
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="carousel-wrapper">
+
+        <div id="carousel" class="carousel"></div>
+
+      </div>
+
+      <div id="no-results">
+        Aucun film ne correspond à ta recherche.
+      </div>
+
+    </main>
+
+
+    <!-- TELEGRAM -->
+    <a
+      class="telegram-link"
+      href="https://t.me/kxback"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span>✈</span>
+      Rejoindre notre Telegram
+    </a>
+
+
+    <!-- =========================
+         INFORMATIONS FILM
+    ========================== -->
+    <div id="film-info">
+
+      <div class="info-box">
+
+        <button
+          id="close-info"
+          aria-label="Fermer"
+        >
+          ×
+        </button>
+
+        <img
+          id="info-image"
+          src=""
+          alt=""
+        >
+
+        <div class="info-content">
+
+          <div class="info-top">
+
+            <span id="info-age"></span>
+
+            <span id="info-year"></span>
+
+          </div>
+
+          <h2 id="info-title"></h2>
+
+          <p id="info-synopsis"></p>
+
+          <button id="launch-film">
+            ▶ &nbsp; LANCER LE FILM
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         LECTEUR
+    ========================== -->
+    <div id="lecteur">
+
+      <button
+        id="close-player"
+        aria-label="Fermer"
+      >
+        ×
+      </button>
+
+      <div class="player-top">
+
+        <div class="player-title" id="player-title">
+          KXFLIX
+        </div>
+
+        <div class="player-progress">
+          <div id="player-progress-bar"></div>
+        </div>
+
+      </div>
+
+      <div class="player-container">
+
+        <iframe
+          id="video-frame"
+          src=""
+          allowfullscreen
+          allow="autoplay; fullscreen"
+          referrerpolicy="no-referrer"
+        ></iframe>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
