@@ -1,11 +1,35 @@
 /* =========================================
    KXFLIX
-   15 FILMS
+   SUPABASE + 15 FILMS
+   ANIMATIONS + CARROUSEL FLUIDE
+========================================= */
+
+
+/* =========================================
+   SUPABASE
+========================================= */
+
+const SUPABASE_URL =
+  "https://pvveqxfgjttjtzzhhqtj.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_Yc6-QzWYSTNUyyPmQAxqOQ_0Jy8HeXp";
+
+const supabaseClient =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+
+/* =========================================
+   FILMS
 ========================================= */
 
 const filmsData = [
 
   {
+    id: "obsession",
     title: "Obsession",
     image: "https://m.media-amazon.com/images/S/pv-target-images/86c0f135b4699427fc84684b09990c0bbb69a41b2921fc577dcd0fbf59851bc6._UR1920,1080_.jpg",
     embed: "https://vrodaz.com/iframe/ed176505",
@@ -16,6 +40,7 @@ const filmsData = [
   },
 
   {
+    id: "toy-story-5",
     title: "Toy Story 5",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA7j43OjYSL25Vukor9_5_nPm3sfohjI1bt0DNTU2o8UyiWqsZMNyhDR98&s=10",
     embed: "https://fradov.com/iframe/78e64c70",
@@ -26,6 +51,7 @@ const filmsData = [
   },
 
   {
+    id: "spider-man-new-generation",
     title: "Spider-Man : New Generation",
     image: "https://snworksceo.imgix.net/ttd/86058c86-ffe3-45ff-bd60-f6f8d28dbdd1.sized-1000x1000.jpg?w=800&dpr=2&ar=16%3A9&fit=crop&crop=faces",
     embed: "https://sharecloudy.com/iframe/Bm7bBpnpaN",
@@ -36,6 +62,7 @@ const filmsData = [
   },
 
   {
+    id: "spider-man-across",
     title: "Spider-Man : Across the Spider-Verse",
     image: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/08f3260f-1512-4c90-a3df-fc2e407ba708/d5f22ff0-d35b-420a-bc64-3d5f9ba3818b?host=wbd-images.prod-vod.h264.io&partner=beamcom",
     embed: "https://sharecloudy.com/iframe/1V4HHtvvKr",
@@ -46,6 +73,7 @@ const filmsData = [
   },
 
   {
+    id: "scream-7",
     title: "Scream 7",
     image: "https://m.media-amazon.com/images/S/aplus-media-library-service-media/8c932462-5fed-4a21-bfd3-275636f21e0b.__CR0,0,1940,1200_PT0_SX970_V1___.jpg",
     embed: "https://vromov.com/iframe/iqdDB5G1i2",
@@ -56,6 +84,7 @@ const filmsData = [
   },
 
   {
+    id: "minions",
     title: "Les Minions",
     image: "https://i.ytimg.com/vi/JDdRK2y2xT0/maxresdefault.jpg",
     embed: "https://vromov.com/iframe/c020336a",
@@ -66,6 +95,7 @@ const filmsData = [
   },
 
   {
+    id: "scary-movie",
     title: "Scary Movie",
     image: "https://thumbnails.cbsig.net/_x/w1200/CBS_Production_Entertainment_VMS/2026/05/28/ALVE01KSRB5EXZEWYA3TCTC4W8S4VP/SM6_US_2026_SA_16x9_1920x1080_NB_4502818_1920x1080.jpg",
     embed: "https://vromov.com/iframe/75dd0371",
@@ -76,6 +106,7 @@ const filmsData = [
   },
 
   {
+    id: "jimmy-neutron",
     title: "Jimmy Neutron : Un Garçon Génial",
     image: "https://proxymedia.woopic.com/api/v1/images/331%2Fjimmy-neutron%7CJIMMYNEUTROW0026207_BAN1_2424_NEWTV_HD.jpg?format=512x&saveas=webp&saveasquality=70",
     embed: "https://dotrab.com/iframe/e63ca81b",
@@ -86,6 +117,7 @@ const filmsData = [
   },
 
   {
+    id: "chat-ventures-rocky",
     title: "Les Chat-ventures de Rocky",
     image: "https://images.justwatch.com/backdrop/346602883/s640/les-chat-ventures-de-rocky.jpg",
     embed: "https://vromov.com/iframe/8697ca1f",
@@ -96,6 +128,7 @@ const filmsData = [
   },
 
   {
+    id: "voyage-chihiro",
     title: "Le Voyage de Chihiro",
     image: "https://proxymedia.woopic.com/api/v1/images/331%2FLEVOYAGEDECW0174776_BAN1_2424_NEWTV_HD.jpg",
     embed: "https://sharecloudy.com/iframe/KptnxWYWbq",
@@ -106,6 +139,7 @@ const filmsData = [
   },
 
   {
+    id: "hulk",
     title: "Hulk",
     image: "https://i.redd.it/x72b8to0gpkf1.jpeg",
     embed: "https://vrodaz.com/iframe/y2IP00lvC3",
@@ -116,6 +150,7 @@ const filmsData = [
   },
 
   {
+    id: "do-not-enter",
     title: "Do Not Enter",
     image: "https://lovehorror.co.uk/wp-content/uploads/2026/03/do-not-enter-feat.webp",
     embed: "https://sharecloudy.com/iframe/8ReQN4yP01",
@@ -126,6 +161,7 @@ const filmsData = [
   },
 
   {
+    id: "ted",
     title: "Ted",
     image: "https://m.media-amazon.com/images/S/pv-target-images/6ad81d8b805f469f3ecd7fce9b9041d4569c4f7d3d57cb0b2bbe14bfd15c71ce._UR1920,1080_.png",
     embed: "https://sharecloudy.com/iframe/o1wMlNERx7",
@@ -136,6 +172,7 @@ const filmsData = [
   },
 
   {
+    id: "ted-2",
     title: "Ted 2",
     image: "https://movieguideme.com/fr/wp-content/uploads/2015/07/ted2.jpg",
     embed: "https://sharecloudy.com/iframe/o7dDLRwh2x",
@@ -146,9 +183,10 @@ const filmsData = [
   },
 
   {
+    id: "wonka",
     title: "Wonka",
     image: "https://proxymedia.woopic.com/api/v1/images/331%2FWONKAXXXXXXW0206876_BAN1_2424_NEWTV_UHD.jpg",
-    embed: "https://sharecloudy.com/iframe/xvWYyQbwpy",
+    embed: "https://vromov.com/iframe/xvWYyQbwpy",
     year: "2023",
     age: "7+",
     genre: "Fantastique",
@@ -159,57 +197,178 @@ const filmsData = [
 
 
 /* =========================================
-   VARIABLES
+   VARIABLES DOM
 ========================================= */
 
-const loginScreen = document.getElementById("login-screen");
-const site = document.getElementById("site");
+const loginScreen =
+  document.getElementById("login-screen");
 
-const nameStep = document.getElementById("name-step");
-const passwordStep = document.getElementById("password-step");
+const site =
+  document.getElementById("site");
 
-const nameInput = document.getElementById("name-input");
-const passwordInput = document.getElementById("password-input");
+const authScreen =
+  document.getElementById("auth-screen");
 
-const nameButton = document.getElementById("name-button");
-const passwordButton = document.getElementById("password-button");
+const nameStep =
+  document.getElementById("name-step");
 
-const passwordError = document.getElementById("password-error");
+const passwordStep =
+  document.getElementById("password-step");
 
-const userName = document.getElementById("user-name");
+const nameInput =
+  document.getElementById("name-input");
 
-const carousel = document.getElementById("carousel");
-const carouselWrapper = document.querySelector(".carousel-wrapper");
+const passwordInput =
+  document.getElementById("password-input");
 
-const prevBtn = document.getElementById("prev-btn");
-const nextBtn = document.getElementById("next-btn");
+const nameButton =
+  document.getElementById("name-button");
 
-const searchInput = document.getElementById("search-input");
-const clearSearch = document.getElementById("clear-search");
-const searchStatus = document.getElementById("search-status");
+const passwordButton =
+  document.getElementById("password-button");
 
-const sectionTitle = document.getElementById("section-title");
-const noResults = document.getElementById("no-results");
+const passwordError =
+  document.getElementById("password-error");
 
-const filmInfo = document.getElementById("film-info");
-const closeInfo = document.getElementById("close-info");
+const userName =
+  document.getElementById("user-name");
 
-const infoImage = document.getElementById("info-image");
-const infoTitle = document.getElementById("info-title");
-const infoAge = document.getElementById("info-age");
-const infoYear = document.getElementById("info-year");
-const infoSynopsis = document.getElementById("info-synopsis");
+const profileAvatar =
+  document.getElementById("profile-avatar");
 
-const launchFilm = document.getElementById("launch-film");
+const profileButton =
+  document.getElementById("profile-button");
 
-const lecteur = document.getElementById("lecteur");
-const closePlayer = document.getElementById("close-player");
+const profileMenu =
+  document.getElementById("profile-menu");
 
-const videoFrame = document.getElementById("video-frame");
-const playerTitle = document.getElementById("player-title");
-const progressBar = document.getElementById("player-progress-bar");
+const profileMenuName =
+  document.getElementById("profile-menu-name");
 
-const featuredButton = document.getElementById("featured-button");
+const profileMenuEmail =
+  document.getElementById("profile-menu-email");
+
+const logoutButton =
+  document.getElementById("logout-button");
+
+const carousel =
+  document.getElementById("carousel");
+
+const carouselWrapper =
+  document.querySelector(".carousel-wrapper");
+
+const prevBtn =
+  document.getElementById("prev-btn");
+
+const nextBtn =
+  document.getElementById("next-btn");
+
+const searchInput =
+  document.getElementById("search-input");
+
+const clearSearch =
+  document.getElementById("clear-search");
+
+const searchStatus =
+  document.getElementById("search-status");
+
+const sectionTitle =
+  document.getElementById("section-title");
+
+const noResults =
+  document.getElementById("no-results");
+
+const filmInfo =
+  document.getElementById("film-info");
+
+const closeInfo =
+  document.getElementById("close-info");
+
+const infoImage =
+  document.getElementById("info-image");
+
+const infoTitle =
+  document.getElementById("info-title");
+
+const infoAge =
+  document.getElementById("info-age");
+
+const infoYear =
+  document.getElementById("info-year");
+
+const infoSynopsis =
+  document.getElementById("info-synopsis");
+
+const launchFilm =
+  document.getElementById("launch-film");
+
+const infoWatchlist =
+  document.getElementById("info-watchlist");
+
+const lecteur =
+  document.getElementById("lecteur");
+
+const closePlayer =
+  document.getElementById("close-player");
+
+const videoFrame =
+  document.getElementById("video-frame");
+
+const playerTitle =
+  document.getElementById("player-title");
+
+const progressBar =
+  document.getElementById("player-progress-bar");
+
+const featuredButton =
+  document.getElementById("featured-button");
+
+const watchlistButton =
+  document.getElementById("watchlist-button");
+
+
+/* =========================================
+   AUTH DOM
+========================================= */
+
+const loginTab =
+  document.getElementById("login-tab");
+
+const signupTab =
+  document.getElementById("signup-tab");
+
+const authLogin =
+  document.getElementById("auth-login");
+
+const authSignup =
+  document.getElementById("auth-signup");
+
+const authLoginEmail =
+  document.getElementById("auth-login-email");
+
+const authLoginPassword =
+  document.getElementById("auth-login-password");
+
+const authLoginButton =
+  document.getElementById("auth-login-button");
+
+const authSignupUsername =
+  document.getElementById("auth-signup-username");
+
+const authSignupEmail =
+  document.getElementById("auth-signup-email");
+
+const authSignupPassword =
+  document.getElementById("auth-signup-password");
+
+const authSignupButton =
+  document.getElementById("auth-signup-button");
+
+const authMessage =
+  document.getElementById("auth-message");
+
+const avatarOptions =
+  document.querySelectorAll(".avatar-option");
 
 
 /* =========================================
@@ -232,110 +391,879 @@ let lastX = 0;
 
 let lastTime = 0;
 
+let currentUser = null;
+let currentProfile = null;
+
+let watchlistIds = new Set();
+
+let watchlistMode = false;
+
+let selectedAvatar =
+  "https://api.dicebear.com/9.x/bottts/svg?seed=KXRed";
+
 const AUTO_SPEED = 0.035;
 
 
 /* =========================================
-   CONNEXION
+   UTILITAIRES
+========================================= */
+
+function escapeHtml(value) {
+
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+}
+
+
+function petitFeedback(element) {
+
+  if (!element) {
+    return;
+  }
+
+  element.animate(
+    [
+      {
+        transform: "scale(1)"
+      },
+      {
+        transform: "scale(0.94)"
+      },
+      {
+        transform: "scale(1.04)"
+      },
+      {
+        transform: "scale(1)"
+      }
+    ],
+    {
+      duration: 280,
+      easing: "ease-out"
+    }
+  );
+
+}
+
+
+/* =========================================
+   MESSAGE AUTH
+========================================= */
+
+function afficherAuthMessage(message, success = false) {
+
+  authMessage.textContent = message;
+
+  authMessage.style.color =
+    success
+      ? "#43d17a"
+      : "#ff5962";
+
+}
+
+
+/* =========================================
+   ÉTAPE NOM
 ========================================= */
 
 function continuerNom() {
 
-  const name = nameInput.value.trim();
+  const name =
+    nameInput.value.trim();
 
   if (!name) {
+
     nameInput.focus();
+
+    nameInput.animate(
+      [
+        {
+          transform: "translateX(0)"
+        },
+        {
+          transform: "translateX(-5px)"
+        },
+        {
+          transform: "translateX(5px)"
+        },
+        {
+          transform: "translateX(-3px)"
+        },
+        {
+          transform: "translateX(0)"
+        }
+      ],
+      {
+        duration: 260
+      }
+    );
+
     return;
   }
 
-  userName.textContent = name;
+  userName.textContent =
+    name;
+
+  authSignupUsername.value =
+    name;
 
   nameStep.classList.remove("active");
+
   passwordStep.classList.add("active");
 
   setTimeout(() => {
+
     passwordInput.focus();
+
   }, 100);
 
 }
 
 
+/* =========================================
+   MOT DE PASSE KX
+========================================= */
+
 function verifierMotDePasse() {
 
-  const password = passwordInput.value;
+  const password =
+    passwordInput.value;
 
   if (password !== "KX") {
 
-    passwordError.style.display = "block";
+    passwordError.style.display =
+      "block";
 
     passwordInput.value = "";
 
     passwordInput.focus();
 
+    passwordInput.animate(
+      [
+        {
+          transform: "translateX(0)"
+        },
+        {
+          transform: "translateX(-6px)"
+        },
+        {
+          transform: "translateX(6px)"
+        },
+        {
+          transform: "translateX(-4px)"
+        },
+        {
+          transform: "translateX(0)"
+        }
+      ],
+      {
+        duration: 280
+      }
+    );
+
     return;
   }
 
-  passwordError.style.display = "none";
+  passwordError.style.display =
+    "none";
 
-  loginScreen.style.opacity = "0";
-  loginScreen.style.pointerEvents = "none";
+  loginScreen.style.opacity =
+    "0";
 
-  site.style.display = "block";
+  loginScreen.style.pointerEvents =
+    "none";
 
   setTimeout(() => {
-    loginScreen.style.display = "none";
+
+    loginScreen.style.display =
+      "none";
+
+    authScreen.classList.add("active");
+
+    authLoginEmail.focus();
+
   }, 500);
 
-  afficherFilms(filmsData);
-
-  startAutoScroll();
 }
+
+
+/* =========================================
+   TABS AUTH
+========================================= */
+
+function afficherConnexion() {
+
+  loginTab.classList.add("active");
+
+  signupTab.classList.remove("active");
+
+  authLogin.classList.add("active");
+
+  authSignup.classList.remove("active");
+
+  afficherAuthMessage("");
+
+}
+
+
+function afficherInscription() {
+
+  loginTab.classList.remove("active");
+
+  signupTab.classList.add("active");
+
+  authLogin.classList.remove("active");
+
+  authSignup.classList.add("active");
+
+  afficherAuthMessage("");
+
+}
+
+
+/* =========================================
+   CRÉATION DE PROFIL
+========================================= */
+
+async function creerProfil(user, username, avatar) {
+
+  const { error } =
+    await supabaseClient
+      .from("profiles")
+      .insert({
+        id: user.id,
+        username: username,
+        avatar: avatar
+      });
+
+  if (error) {
+
+    console.error(
+      "Erreur profil:",
+      error
+    );
+
+    return false;
+  }
+
+  return true;
+}
+
+
+/* =========================================
+   CHARGER PROFIL
+========================================= */
+
+async function chargerProfil(user) {
+
+  if (!user) {
+    return null;
+  }
+
+  const { data, error } =
+    await supabaseClient
+      .from("profiles")
+      .select("id, username, avatar, created_at")
+      .eq("id", user.id)
+      .maybeSingle();
+
+  if (error) {
+
+    console.error(
+      "Erreur chargement profil:",
+      error
+    );
+
+    return null;
+  }
+
+  if (data) {
+    return data;
+  }
+
+  const username =
+    user.user_metadata?.username ||
+    nameInput.value.trim() ||
+    "Utilisateur";
+
+  const avatar =
+    user.user_metadata?.avatar ||
+    selectedAvatar;
+
+  const created =
+    await creerProfil(
+      user,
+      username,
+      avatar
+    );
+
+  if (!created) {
+    return null;
+  }
+
+  return {
+    id: user.id,
+    username,
+    avatar
+  };
+}
+
+
+/* =========================================
+   AFFICHER UTILISATEUR
+========================================= */
+
+function afficherUtilisateur(
+  user,
+  profile
+) {
+
+  currentUser = user;
+
+  currentProfile = profile;
+
+  const username =
+    profile?.username ||
+    user.user_metadata?.username ||
+    "Utilisateur";
+
+  const avatar =
+    profile?.avatar ||
+    user.user_metadata?.avatar ||
+    selectedAvatar;
+
+  userName.textContent =
+    username;
+
+  profileMenuName.textContent =
+    username;
+
+  profileMenuEmail.textContent =
+    user.email || "";
+
+  profileAvatar.src =
+    avatar;
+
+  profileAvatar.alt =
+    `Avatar de ${username}`;
+
+}
+
+
+/* =========================================
+   CHARGER MA LISTE
+========================================= */
+
+async function chargerWatchlist() {
+
+  watchlistIds =
+    new Set();
+
+  if (!currentUser) {
+    return;
+  }
+
+  const { data, error } =
+    await supabaseClient
+      .from("watchlist")
+      .select("film_id")
+      .eq("user_id", currentUser.id);
+
+  if (error) {
+
+    console.error(
+      "Erreur watchlist:",
+      error
+    );
+
+    return;
+  }
+
+  (data || []).forEach(item => {
+
+    watchlistIds.add(
+      item.film_id
+    );
+
+  });
+
+}
+
+
+/* =========================================
+   CONNEXION SUPABASE
+========================================= */
+
+async function connecterCompte() {
+
+  const email =
+    authLoginEmail.value.trim();
+
+  const password =
+    authLoginPassword.value;
+
+  if (!email || !password) {
+
+    afficherAuthMessage(
+      "Entre ton e-mail et ton mot de passe."
+    );
+
+    return;
+  }
+
+  authLoginButton.disabled =
+    true;
+
+  authLoginButton.textContent =
+    "Connexion...";
+
+  afficherAuthMessage("");
+
+  const { data, error } =
+    await supabaseClient.auth
+      .signInWithPassword({
+        email,
+        password
+      });
+
+  if (error) {
+
+    afficherAuthMessage(
+      "E-mail ou mot de passe incorrect."
+    );
+
+    authLoginButton.disabled =
+      false;
+
+    authLoginButton.textContent =
+      "Se connecter";
+
+    return;
+  }
+
+  await ouvrirSiteApresConnexion(
+    data.user
+  );
+
+  authLoginButton.disabled =
+    false;
+
+  authLoginButton.textContent =
+    "Se connecter";
+}
+
+
+/* =========================================
+   INSCRIPTION
+========================================= */
+
+async function creerCompte() {
+
+  const username =
+    authSignupUsername.value.trim();
+
+  const email =
+    authSignupEmail.value.trim();
+
+  const password =
+    authSignupPassword.value;
+
+  if (!username) {
+
+    afficherAuthMessage(
+      "Choisis un pseudo."
+    );
+
+    authSignupUsername.focus();
+
+    return;
+  }
+
+  if (!email) {
+
+    afficherAuthMessage(
+      "Entre une adresse e-mail."
+    );
+
+    authSignupEmail.focus();
+
+    return;
+  }
+
+  if (password.length < 6) {
+
+    afficherAuthMessage(
+      "Le mot de passe doit contenir au moins 6 caractères."
+    );
+
+    authSignupPassword.focus();
+
+    return;
+  }
+
+  authSignupButton.disabled =
+    true;
+
+  authSignupButton.textContent =
+    "Création...";
+
+  afficherAuthMessage("");
+
+  const { data, error } =
+    await supabaseClient.auth
+      .signUp({
+        email,
+        password,
+        options: {
+          data: {
+            username,
+            avatar: selectedAvatar
+          }
+        }
+      });
+
+  if (error) {
+
+    console.error(error);
+
+    afficherAuthMessage(
+      error.message ||
+      "Impossible de créer le compte."
+    );
+
+    authSignupButton.disabled =
+      false;
+
+    authSignupButton.textContent =
+      "Créer mon compte";
+
+    return;
+  }
+
+  if (!data.user) {
+
+    afficherAuthMessage(
+      "Impossible de récupérer ton compte."
+    );
+
+    authSignupButton.disabled =
+      false;
+
+    authSignupButton.textContent =
+      "Créer mon compte";
+
+    return;
+  }
+
+  const profileCreated =
+    await creerProfil(
+      data.user,
+      username,
+      selectedAvatar
+    );
+
+  if (!profileCreated) {
+
+    afficherAuthMessage(
+      "Le compte a été créé mais le profil n'a pas pu être enregistré."
+    );
+
+    authSignupButton.disabled =
+      false;
+
+    authSignupButton.textContent =
+      "Créer mon compte";
+
+    return;
+  }
+
+  afficherAuthMessage(
+    "Compte créé !",
+    true
+  );
+
+  setTimeout(async () => {
+
+    await ouvrirSiteApresConnexion(
+      data.user
+    );
+
+    authSignupButton.disabled =
+      false;
+
+    authSignupButton.textContent =
+      "Créer mon compte";
+
+  }, 500);
+
+}
+
+
+/* =========================================
+   OUVRIR SITE
+========================================= */
+
+async function ouvrirSiteApresConnexion(user) {
+
+  if (!user) {
+    return;
+  }
+
+  const profile =
+    await chargerProfil(user);
+
+  if (!profile) {
+
+    afficherAuthMessage(
+      "Impossible de charger ton profil."
+    );
+
+    return;
+  }
+
+  await chargerWatchlist();
+
+  afficherUtilisateur(
+    user,
+    profile
+  );
+
+  authScreen.classList.remove(
+    "active"
+  );
+
+  site.style.display =
+    "block";
+
+  afficherFilms(
+    watchlistMode
+      ? filmsData.filter(
+          film => watchlistIds.has(film.id)
+        )
+      : filmsData
+  );
+
+}
+
+
+/* =========================================
+   SESSION EXISTANTE
+========================================= */
+
+async function verifierSession() {
+
+  const {
+    data
+  } =
+    await supabaseClient.auth
+      .getSession();
+
+  const session =
+    data?.session;
+
+  if (!session?.user) {
+    return;
+  }
+
+  currentUser =
+    session.user;
+
+}
+
+
+/* =========================================
+   DÉCONNEXION
+========================================= */
+
+async function deconnecter() {
+
+  await supabaseClient.auth.signOut();
+
+  currentUser = null;
+
+  currentProfile = null;
+
+  watchlistIds =
+    new Set();
+
+  watchlistMode =
+    false;
+
+  profileMenu.classList.remove(
+    "active"
+  );
+
+  site.style.display =
+    "none";
+
+  authScreen.classList.remove(
+    "active"
+  );
+
+  loginScreen.style.display =
+    "flex";
+
+  loginScreen.style.opacity =
+    "1";
+
+  loginScreen.style.pointerEvents =
+    "auto";
+
+  nameStep.classList.add(
+    "active"
+  );
+
+  passwordStep.classList.remove(
+    "active"
+  );
+
+  nameInput.value = "";
+
+  passwordInput.value = "";
+
+}
+
+
+/* =========================================
+   AVATARS
+========================================= */
+
+avatarOptions.forEach(option => {
+
+  option.addEventListener(
+    "click",
+    () => {
+
+      avatarOptions.forEach(
+        item =>
+          item.classList.remove(
+            "selected"
+          )
+      );
+
+      option.classList.add(
+        "selected"
+      );
+
+      selectedAvatar =
+        option.dataset.avatar;
+
+      petitFeedback(option);
+
+    }
+  );
+
+});
 
 
 /* =========================================
    CARTES FILMS
 ========================================= */
 
-function creerCarteFilm(film, index) {
+function creerCarteFilm(
+  film,
+  index
+) {
 
-  const card = document.createElement("article");
+  const card =
+    document.createElement("article");
 
-  card.className = "film-card";
+  card.className =
+    "film-card";
 
-  card.dataset.index = index;
+  card.dataset.index =
+    index;
+
+  card.style.animationDelay =
+    `${Math.min(index * 0.035, 0.35)}s`;
+
+  const isInWatchlist =
+    watchlistIds.has(
+      film.id
+    );
 
   card.innerHTML = `
+
     <img
       src="${film.image}"
-      alt="${film.title}"
+      alt="${escapeHtml(film.title)}"
       loading="lazy"
       draggable="false"
     >
 
-    <div class="film-play">▶</div>
+    <button
+      class="film-watchlist ${isInWatchlist ? "active" : ""}"
+      type="button"
+      aria-label="Ma liste"
+      title="${isInWatchlist ? "Retirer de ma liste" : "Ajouter à ma liste"}"
+    >
+      ${isInWatchlist ? "♥" : "♡"}
+    </button>
+
+    <div class="film-play">
+      ▶
+    </div>
 
     <div class="film-card-info">
 
       <div class="film-title">
-        ${film.title}
+        ${escapeHtml(film.title)}
       </div>
 
       <div class="film-meta">
-        <span class="film-age">${film.age}</span>
-        <span class="film-year">${film.year}</span>
+
+        <span class="film-age">
+          ${escapeHtml(film.age)}
+        </span>
+
+        <span class="film-year">
+          ${escapeHtml(film.year)}
+        </span>
+
       </div>
 
     </div>
   `;
 
-  card.addEventListener("click", () => {
+  const watchButton =
+    card.querySelector(
+      ".film-watchlist"
+    );
 
-    if (isDragging) {
-      return;
+  watchButton.addEventListener(
+    "click",
+    async event => {
+
+      event.stopPropagation();
+
+      await basculerWatchlist(
+        film,
+        watchButton
+      );
+
+      petitFeedback(
+        watchButton
+      );
+
     }
+  );
 
-    ouvrirInfos(film);
-  });
+  card.addEventListener(
+    "click",
+    () => {
+
+      if (isDragging) {
+        return;
+      }
+
+      ouvrirInfos(film);
+
+    }
+  );
 
   return card;
 }
@@ -349,48 +1277,236 @@ function afficherFilms(list) {
 
   carousel.innerHTML = "";
 
-  filteredFilms = [...list];
+  filteredFilms =
+    [...list];
+
+  carouselPosition =
+    0;
+
+  carousel.style.transition =
+    "none";
+
+  carousel.style.transform =
+    "translate3d(0,0,0)";
 
   if (list.length === 0) {
 
-    carousel.style.transform = "translate3d(0,0,0)";
+    noResults.style.display =
+      "block";
 
-    noResults.style.display = "block";
+    sectionTitle.textContent =
+      watchlistMode
+        ? "Ma liste"
+        : "Aucun résultat";
 
     return;
   }
 
-  noResults.style.display = "none";
+  noResults.style.display =
+    "none";
 
-  /*
-    On répète la liste plusieurs fois.
-    Cela permet de créer un vrai défilement
-    continu avec les 15 films.
-  */
+  const repetitions =
+    3;
 
-  const repetitions = 3;
+  for (
+    let r = 0;
+    r < repetitions;
+    r++
+  ) {
 
-  for (let r = 0; r < repetitions; r++) {
+    list.forEach(
+      (film, index) => {
 
-    list.forEach((film, index) => {
+        const card =
+          creerCarteFilm(
+            film,
+            index
+          );
 
-      const card = creerCarteFilm(film, index);
+        carousel.appendChild(
+          card
+        );
 
-      carousel.appendChild(card);
-
-    });
+      }
+    );
 
   }
 
-  carouselPosition = 0;
+  if (watchlistMode) {
 
-  carousel.style.transform =
-    `translate3d(${carouselPosition}px,0,0)`;
+    sectionTitle.textContent =
+      `Ma liste · ${list.length} film${list.length > 1 ? "s" : ""}`;
 
-  sectionTitle.textContent =
-    list.length === filmsData.length
-      ? "Tous les films"
-      : `${list.length} film${list.length > 1 ? "s" : ""} trouvé${list.length > 1 ? "s" : ""}`;
+  } else {
+
+    sectionTitle.textContent =
+      list.length === filmsData.length
+        ? "Tous les films"
+        : `${list.length} film${list.length > 1 ? "s" : ""} trouvé${list.length > 1 ? "s" : ""}`;
+
+  }
+
+}
+
+
+/* =========================================
+   WATCHLIST
+========================================= */
+
+async function ajouterWatchlist(film) {
+
+  if (!currentUser) {
+    return false;
+  }
+
+  const { error } =
+    await supabaseClient
+      .from("watchlist")
+      .insert({
+        user_id: currentUser.id,
+        film_id: film.id
+      });
+
+  if (error) {
+
+    if (
+      error.code === "23505"
+    ) {
+
+      watchlistIds.add(
+        film.id
+      );
+
+      return true;
+    }
+
+    console.error(
+      "Erreur ajout watchlist:",
+      error
+    );
+
+    return false;
+  }
+
+  watchlistIds.add(
+    film.id
+  );
+
+  return true;
+}
+
+
+async function supprimerWatchlist(
+  film
+) {
+
+  if (!currentUser) {
+    return false;
+  }
+
+  const { error } =
+    await supabaseClient
+      .from("watchlist")
+      .delete()
+      .eq(
+        "user_id",
+        currentUser.id
+      )
+      .eq(
+        "film_id",
+        film.id
+      );
+
+  if (error) {
+
+    console.error(
+      "Erreur suppression watchlist:",
+      error
+    );
+
+    return false;
+  }
+
+  watchlistIds.delete(
+    film.id
+  );
+
+  return true;
+}
+
+
+async function basculerWatchlist(
+  film,
+  button = null
+) {
+
+  if (!currentUser) {
+
+    authScreen.classList.add(
+      "active"
+    );
+
+    afficherConnexion();
+
+    return;
+  }
+
+  const alreadyIn =
+    watchlistIds.has(
+      film.id
+    );
+
+  if (alreadyIn) {
+
+    await supprimerWatchlist(
+      film
+    );
+
+  } else {
+
+    await ajouterWatchlist(
+      film
+    );
+
+  }
+
+  if (button) {
+
+    const active =
+      watchlistIds.has(
+        film.id
+      );
+
+    button.classList.toggle(
+      "active",
+      active
+    );
+
+    button.textContent =
+      active ? "♥" : "♡";
+
+    button.title =
+      active
+        ? "Retirer de ma liste"
+        : "Ajouter à ma liste";
+
+  }
+
+  mettreAJourBoutonInfo();
+
+  if (watchlistMode) {
+
+    afficherFilms(
+      filmsData.filter(
+        item =>
+          watchlistIds.has(
+            item.id
+          )
+      )
+    );
+
+  }
+
 }
 
 
@@ -400,20 +1516,64 @@ function afficherFilms(list) {
 
 function ouvrirInfos(film) {
 
-  currentFilm = film;
+  currentFilm =
+    film;
 
-  infoImage.src = film.image;
-  infoImage.alt = film.title;
+  infoImage.src =
+    film.image;
 
-  infoTitle.textContent = film.title;
-  infoAge.textContent = film.age;
-  infoYear.textContent = film.year;
+  infoImage.alt =
+    film.title;
 
-  infoSynopsis.textContent = film.synopsis;
+  infoTitle.textContent =
+    film.title;
 
-  filmInfo.classList.add("active");
+  infoAge.textContent =
+    film.age;
 
-  document.body.style.overflow = "hidden";
+  infoYear.textContent =
+    film.year;
+
+  infoSynopsis.textContent =
+    film.synopsis;
+
+  mettreAJourBoutonInfo();
+
+  filmInfo.classList.add(
+    "active"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================================
+   BOUTON WATCHLIST INFOS
+========================================= */
+
+function mettreAJourBoutonInfo() {
+
+  if (!currentFilm) {
+    return;
+  }
+
+  const active =
+    watchlistIds.has(
+      currentFilm.id
+    );
+
+  infoWatchlist.classList.toggle(
+    "active",
+    active
+  );
+
+  infoWatchlist.textContent =
+    active
+      ? "♥ Retirer de ma liste"
+      : "♡ Ma liste";
+
 }
 
 
@@ -423,9 +1583,12 @@ function ouvrirInfos(film) {
 
 function fermerInfos() {
 
-  filmInfo.classList.remove("active");
+  filmInfo.classList.remove(
+    "active"
+  );
 
-  document.body.style.overflow = "";
+  document.body.style.overflow =
+    "";
 
 }
 
@@ -440,17 +1603,27 @@ function lancerFilm() {
     return;
   }
 
-  lecteur.classList.add("active");
+  lecteur.classList.add(
+    "active"
+  );
 
-  playerTitle.textContent = currentFilm.title;
+  playerTitle.textContent =
+    currentFilm.title;
 
-  videoFrame.src = currentFilm.embed;
+  videoFrame.src =
+    currentFilm.embed;
 
-  progressBar.style.width = "0%";
+  progressBar.style.width =
+    "0%";
+
+  progressBar.dataset.value =
+    "0";
 
   fermerInfos();
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow =
+    "hidden";
+
 }
 
 
@@ -460,13 +1633,22 @@ function lancerFilm() {
 
 function fermerLecteur() {
 
-  lecteur.classList.remove("active");
+  lecteur.classList.remove(
+    "active"
+  );
 
-  videoFrame.src = "";
+  videoFrame.src =
+    "";
 
-  progressBar.style.width = "0%";
+  progressBar.style.width =
+    "0%";
 
-  document.body.style.overflow = "";
+  progressBar.dataset.value =
+    "0";
+
+  document.body.style.overflow =
+    "";
+
 }
 
 
@@ -476,25 +1658,43 @@ function fermerLecteur() {
 
 function animationProgress() {
 
-  if (!lecteur.classList.contains("active")) {
+  if (
+    !lecteur.classList.contains(
+      "active"
+    )
+  ) {
+
+    requestAnimationFrame(
+      animationProgress
+    );
+
     return;
+
   }
 
-  let current = parseFloat(
-    progressBar.dataset.value || "0"
-  );
+  let current =
+    parseFloat(
+      progressBar.dataset.value ||
+      "0"
+    );
 
-  current += 0.025;
+  current +=
+    0.025;
 
   if (current > 100) {
     current = 0;
   }
 
-  progressBar.dataset.value = current;
+  progressBar.dataset.value =
+    current;
 
-  progressBar.style.width = `${current}%`;
+  progressBar.style.width =
+    `${current}%`;
 
-  requestAnimationFrame(animationProgress);
+  requestAnimationFrame(
+    animationProgress
+  );
+
 }
 
 
@@ -504,50 +1704,147 @@ function animationProgress() {
 
 function rechercherFilms() {
 
-  const query = searchInput.value
-    .trim()
-    .toLowerCase();
+  watchlistMode =
+    false;
+
+  watchlistButton.classList.remove(
+    "active"
+  );
+
+  const query =
+    searchInput.value
+      .trim()
+      .toLowerCase();
 
   clearSearch.style.display =
     query ? "block" : "none";
 
   if (!query) {
 
-    searchStatus.textContent = "";
+    searchStatus.textContent =
+      "";
 
-    afficherFilms(filmsData);
+    afficherFilms(
+      filmsData
+    );
 
     return;
   }
 
-  const resultats = filmsData.filter(film => {
+  const resultats =
+    filmsData.filter(
+      film => {
 
-    return (
-      film.title.toLowerCase().includes(query) ||
-      film.genre.toLowerCase().includes(query) ||
-      film.year.includes(query)
+        return (
+          film.title
+            .toLowerCase()
+            .includes(query) ||
+
+          film.genre
+            .toLowerCase()
+            .includes(query) ||
+
+          film.year
+            .includes(query)
+        );
+
+      }
     );
-
-  });
 
   searchStatus.textContent =
     `${resultats.length} résultat${resultats.length > 1 ? "s" : ""}`;
 
-  afficherFilms(resultats);
+  afficherFilms(
+    resultats
+  );
+
 }
 
 
 function effacerRecherche() {
 
-  searchInput.value = "";
+  searchInput.value =
+    "";
 
-  clearSearch.style.display = "none";
+  clearSearch.style.display =
+    "none";
 
-  searchStatus.textContent = "";
+  searchStatus.textContent =
+    "";
 
-  afficherFilms(filmsData);
+  if (watchlistMode) {
+
+    afficherFilms(
+      filmsData.filter(
+        film =>
+          watchlistIds.has(
+            film.id
+          )
+      )
+    );
+
+  } else {
+
+    afficherFilms(
+      filmsData
+    );
+
+  }
 
   searchInput.focus();
+
+}
+
+
+/* =========================================
+   MA LISTE
+========================================= */
+
+function afficherMaListe() {
+
+  watchlistMode =
+    !watchlistMode;
+
+  watchlistButton.classList.toggle(
+    "active",
+    watchlistMode
+  );
+
+  petitFeedback(
+    watchlistButton
+  );
+
+  searchInput.value =
+    "";
+
+  clearSearch.style.display =
+    "none";
+
+  searchStatus.textContent =
+    "";
+
+  if (watchlistMode) {
+
+    const liste =
+      filmsData.filter(
+        film =>
+          watchlistIds.has(
+            film.id
+          )
+      );
+
+    afficherFilms(
+      liste
+    );
+
+  } else {
+
+    afficherFilms(
+      filmsData
+    );
+
+  }
+
 }
 
 
@@ -557,49 +1854,81 @@ function effacerRecherche() {
 
 function obtenirLargeurBloc() {
 
-  const cards = carousel.children;
+  const cards =
+    carousel.children;
 
   if (!cards.length) {
     return 0;
   }
 
-  const totalFilms = filteredFilms.length;
+  const totalFilms =
+    filteredFilms.length;
 
   if (!totalFilms) {
     return 0;
   }
 
-  const firstCard = cards[0];
+  const firstCard =
+    cards[0];
 
-  const secondCard = cards[1];
+  const secondCard =
+    cards[1];
 
-  if (!firstCard || !secondCard) {
-    return firstCard.offsetWidth + 18;
+  if (
+    !firstCard ||
+    !secondCard
+  ) {
+
+    return (
+      firstCard.offsetWidth +
+      18
+    );
+
   }
 
   const distance =
-    secondCard.getBoundingClientRect().left -
-    firstCard.getBoundingClientRect().left;
+    secondCard
+      .getBoundingClientRect()
+      .left -
+    firstCard
+      .getBoundingClientRect()
+      .left;
 
-  return distance * totalFilms;
+  return (
+    distance *
+    totalFilms
+  );
+
 }
 
 
 function normaliserPosition() {
 
-  const bloc = obtenirLargeurBloc();
+  const bloc =
+    obtenirLargeurBloc();
 
   if (!bloc) {
     return;
   }
 
-  if (carouselPosition <= -bloc) {
-    carouselPosition += bloc;
+  if (
+    carouselPosition <= -bloc
+  ) {
+
+    carouselPosition +=
+      bloc;
+
   }
 
-  if (carouselPosition > 0) {
-    carouselPosition -= bloc;
+  if (
+    carouselPosition > 0
+  ) {
+
+    carouselPosition -=
+      bloc;
+
   }
+
 }
 
 
@@ -609,9 +1938,12 @@ function startAutoScroll(time = 0) {
     lastTime = time;
   }
 
-  const delta = time - lastTime;
+  const delta =
+    time -
+    lastTime;
 
-  lastTime = time;
+  lastTime =
+    time;
 
   if (
     !isPaused &&
@@ -620,16 +1952,24 @@ function startAutoScroll(time = 0) {
   ) {
 
     carouselPosition -=
-      AUTO_SPEED * Math.min(delta, 40);
+      AUTO_SPEED *
+      Math.min(
+        delta,
+        40
+      );
 
     normaliserPosition();
 
     carousel.style.transform =
       `translate3d(${carouselPosition}px,0,0)`;
+
   }
 
   animationFrame =
-    requestAnimationFrame(startAutoScroll);
+    requestAnimationFrame(
+      startAutoScroll
+    );
+
 }
 
 
@@ -637,59 +1977,92 @@ function startAutoScroll(time = 0) {
    BOUTONS CARROUSEL
 ========================================= */
 
-function avancerCarousel() {
-
-  const distance = obtenirDistanceCarte();
-
-  carouselPosition -= distance * 2;
-
-  normaliserPosition();
-
-  carousel.style.transition =
-    "transform 0.45s ease";
-
-  carousel.style.transform =
-    `translate3d(${carouselPosition}px,0,0)`;
-
-  setTimeout(() => {
-    carousel.style.transition = "";
-  }, 500);
-}
-
-
-function reculerCarousel() {
-
-  const distance = obtenirDistanceCarte();
-
-  carouselPosition += distance * 2;
-
-  normaliserPosition();
-
-  carousel.style.transition =
-    "transform 0.45s ease";
-
-  carousel.style.transform =
-    `translate3d(${carouselPosition}px,0,0)`;
-
-  setTimeout(() => {
-    carousel.style.transition = "";
-  }, 500);
-}
-
-
 function obtenirDistanceCarte() {
 
-  const first = carousel.children[0];
-  const second = carousel.children[1];
+  const first =
+    carousel.children[0];
 
-  if (!first || !second) {
+  const second =
+    carousel.children[1];
+
+  if (
+    !first ||
+    !second
+  ) {
+
     return 328;
+
   }
 
   return (
     second.getBoundingClientRect().left -
     first.getBoundingClientRect().left
   );
+
+}
+
+
+function avancerCarousel() {
+
+  const distance =
+    obtenirDistanceCarte();
+
+  isPaused =
+    true;
+
+  carouselPosition -=
+    distance * 2;
+
+  normaliserPosition();
+
+  carousel.style.transition =
+    "transform 0.55s cubic-bezier(.2,.8,.2,1)";
+
+  carousel.style.transform =
+    `translate3d(${carouselPosition}px,0,0)`;
+
+  setTimeout(() => {
+
+    carousel.style.transition =
+      "";
+
+    isPaused =
+      false;
+
+  }, 600);
+
+}
+
+
+function reculerCarousel() {
+
+  const distance =
+    obtenirDistanceCarte();
+
+  isPaused =
+    true;
+
+  carouselPosition +=
+    distance * 2;
+
+  normaliserPosition();
+
+  carousel.style.transition =
+    "transform 0.55s cubic-bezier(.2,.8,.2,1)";
+
+  carousel.style.transform =
+    `translate3d(${carouselPosition}px,0,0)`;
+
+  setTimeout(() => {
+
+    carousel.style.transition =
+      "";
+
+    isPaused =
+      false;
+
+  }, 600);
+
 }
 
 
@@ -697,17 +2070,34 @@ function obtenirDistanceCarte() {
    SOURIS
 ========================================= */
 
-carouselWrapper.addEventListener("mouseenter", () => {
-  isPaused = true;
-});
+carouselWrapper.addEventListener(
+  "mouseenter",
+  () => {
 
-carouselWrapper.addEventListener("mouseleave", () => {
+    if (!isDragging) {
 
-  if (!isDragging) {
-    isPaused = false;
+      isPaused =
+        true;
+
+    }
+
   }
+);
 
-});
+
+carouselWrapper.addEventListener(
+  "mouseleave",
+  () => {
+
+    if (!isDragging) {
+
+      isPaused =
+        false;
+
+    }
+
+  }
+);
 
 
 /* =========================================
@@ -718,16 +2108,26 @@ carouselWrapper.addEventListener(
   "touchstart",
   event => {
 
-    isDragging = true;
-    isPaused = true;
+    isDragging =
+      true;
 
-    startX = event.touches[0].clientX;
-    lastX = startX;
+    isPaused =
+      true;
 
-    carouselWrapper.classList.add("dragging");
+    startX =
+      event.touches[0].clientX;
+
+    lastX =
+      startX;
+
+    carouselWrapper.classList.add(
+      "dragging"
+    );
 
   },
-  { passive: true }
+  {
+    passive: true
+  }
 );
 
 
@@ -739,13 +2139,18 @@ carouselWrapper.addEventListener(
       return;
     }
 
-    const currentX = event.touches[0].clientX;
+    const currentX =
+      event.touches[0].clientX;
 
-    const movement = currentX - lastX;
+    const movement =
+      currentX -
+      lastX;
 
-    lastX = currentX;
+    lastX =
+      currentX;
 
-    carouselPosition += movement;
+    carouselPosition +=
+      movement;
 
     normaliserPosition();
 
@@ -753,7 +2158,9 @@ carouselWrapper.addEventListener(
       `translate3d(${carouselPosition}px,0,0)`;
 
   },
-  { passive: true }
+  {
+    passive: true
+  }
 );
 
 
@@ -761,12 +2168,18 @@ carouselWrapper.addEventListener(
   "touchend",
   () => {
 
-    isDragging = false;
+    isDragging =
+      false;
 
-    carouselWrapper.classList.remove("dragging");
+    carouselWrapper.classList.remove(
+      "dragging"
+    );
 
     setTimeout(() => {
-      isPaused = false;
+
+      isPaused =
+        false;
+
     }, 350);
 
   }
@@ -781,13 +2194,25 @@ carouselWrapper.addEventListener(
   "mousedown",
   event => {
 
-    isDragging = true;
-    isPaused = true;
+    if (event.button !== 0) {
+      return;
+    }
 
-    startX = event.clientX;
-    lastX = startX;
+    isDragging =
+      true;
 
-    carouselWrapper.classList.add("dragging");
+    isPaused =
+      true;
+
+    startX =
+      event.clientX;
+
+    lastX =
+      startX;
+
+    carouselWrapper.classList.add(
+      "dragging"
+    );
 
   }
 );
@@ -802,11 +2227,14 @@ window.addEventListener(
     }
 
     const movement =
-      event.clientX - lastX;
+      event.clientX -
+      lastX;
 
-    lastX = event.clientX;
+    lastX =
+      event.clientX;
 
-    carouselPosition += movement;
+    carouselPosition +=
+      movement;
 
     normaliserPosition();
 
@@ -825,13 +2253,60 @@ window.addEventListener(
       return;
     }
 
-    isDragging = false;
+    isDragging =
+      false;
 
-    carouselWrapper.classList.remove("dragging");
+    carouselWrapper.classList.remove(
+      "dragging"
+    );
 
     setTimeout(() => {
-      isPaused = false;
+
+      isPaused =
+        false;
+
     }, 300);
+
+  }
+);
+
+
+/* =========================================
+   PROFIL
+========================================= */
+
+profileButton.addEventListener(
+  "click",
+  event => {
+
+    event.stopPropagation();
+
+    profileMenu.classList.toggle(
+      "active"
+    );
+
+  }
+);
+
+
+document.addEventListener(
+  "click",
+  event => {
+
+    if (
+      !profileMenu.contains(
+        event.target
+      ) &&
+      !profileButton.contains(
+        event.target
+      )
+    ) {
+
+      profileMenu.classList.remove(
+        "active"
+      );
+
+    }
 
   }
 );
@@ -853,7 +2328,11 @@ featuredButton.addEventListener(
       );
 
     if (spiderMan) {
-      ouvrirInfos(spiderMan);
+
+      ouvrirInfos(
+        spiderMan
+      );
+
     }
 
   }
@@ -861,7 +2340,7 @@ featuredButton.addEventListener(
 
 
 /* =========================================
-   EVENTS
+   EVENTS AUTH
 ========================================= */
 
 nameButton.addEventListener(
@@ -874,27 +2353,124 @@ passwordButton.addEventListener(
   verifierMotDePasse
 );
 
+loginTab.addEventListener(
+  "click",
+  afficherConnexion
+);
+
+signupTab.addEventListener(
+  "click",
+  afficherInscription
+);
+
+authLoginButton.addEventListener(
+  "click",
+  connecterCompte
+);
+
+authSignupButton.addEventListener(
+  "click",
+  creerCompte
+);
+
+logoutButton.addEventListener(
+  "click",
+  deconnecter
+);
+
+
+/* =========================================
+   ENTER
+========================================= */
+
 nameInput.addEventListener(
   "keydown",
   event => {
 
-    if (event.key === "Enter") {
+    if (
+      event.key ===
+      "Enter"
+    ) {
+
       continuerNom();
+
     }
 
   }
 );
+
 
 passwordInput.addEventListener(
   "keydown",
   event => {
 
-    if (event.key === "Enter") {
+    if (
+      event.key ===
+      "Enter"
+    ) {
+
       verifierMotDePasse();
+
     }
 
   }
 );
+
+
+authLoginEmail.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key ===
+      "Enter"
+    ) {
+
+      connecterCompte();
+
+    }
+
+  }
+);
+
+
+authLoginPassword.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key ===
+      "Enter"
+    ) {
+
+      connecterCompte();
+
+    }
+
+  }
+);
+
+
+authSignupPassword.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key ===
+      "Enter"
+    ) {
+
+      creerCompte();
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   RECHERCHE
+========================================= */
 
 searchInput.addEventListener(
   "input",
@@ -906,6 +2482,11 @@ clearSearch.addEventListener(
   effacerRecherche
 );
 
+
+/* =========================================
+   CARROUSEL
+========================================= */
+
 prevBtn.addEventListener(
   "click",
   reculerCarousel
@@ -916,15 +2497,46 @@ nextBtn.addEventListener(
   avancerCarousel
 );
 
+
+/* =========================================
+   INFOS
+========================================= */
+
 closeInfo.addEventListener(
   "click",
   fermerInfos
 );
 
+
 launchFilm.addEventListener(
   "click",
   lancerFilm
 );
+
+
+infoWatchlist.addEventListener(
+  "click",
+  async () => {
+
+    if (!currentFilm) {
+      return;
+    }
+
+    await basculerWatchlist(
+      currentFilm
+    );
+
+    petitFeedback(
+      infoWatchlist
+    );
+
+  }
+);
+
+
+/* =========================================
+   LECTEUR
+========================================= */
 
 closePlayer.addEventListener(
   "click",
@@ -933,15 +2545,30 @@ closePlayer.addEventListener(
 
 
 /* =========================================
-   CLIQUER EN DEHORS DE LA FENÊTRE INFOS
+   MA LISTE
+========================================= */
+
+watchlistButton.addEventListener(
+  "click",
+  afficherMaListe
+);
+
+
+/* =========================================
+   CLIQUER DEHORS INFOS
 ========================================= */
 
 filmInfo.addEventListener(
   "click",
   event => {
 
-    if (event.target === filmInfo) {
+    if (
+      event.target ===
+      filmInfo
+    ) {
+
       fermerInfos();
+
     }
 
   }
@@ -956,17 +2583,38 @@ document.addEventListener(
   "keydown",
   event => {
 
-    if (event.key !== "Escape") {
+    if (
+      event.key !==
+      "Escape"
+    ) {
+
       return;
+
     }
 
-    if (filmInfo.classList.contains("active")) {
+    if (
+      filmInfo.classList.contains(
+        "active"
+      )
+    ) {
+
       fermerInfos();
+
     }
 
-    if (lecteur.classList.contains("active")) {
+    if (
+      lecteur.classList.contains(
+        "active"
+      )
+    ) {
+
       fermerLecteur();
+
     }
+
+    profileMenu.classList.remove(
+      "active"
+    );
 
   }
 );
@@ -976,13 +2624,36 @@ document.addEventListener(
    INITIALISATION
 ========================================= */
 
-site.style.display = "none";
+async function initialiser() {
 
-filmInfo.classList.remove("active");
+  site.style.display =
+    "none";
 
-lecteur.classList.remove("active");
+  authScreen.classList.remove(
+    "active"
+  );
 
-afficherFilms(filmsData);
+  filmInfo.classList.remove(
+    "active"
+  );
 
-requestAnimationFrame(startAutoScroll);
-animationProgress();
+  lecteur.classList.remove(
+    "active"
+  );
+
+  afficherFilms(
+    filmsData
+  );
+
+  requestAnimationFrame(
+    startAutoScroll
+  );
+
+  animationProgress();
+
+  await verifierSession();
+
+}
+
+
+initialiser();
